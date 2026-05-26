@@ -2,7 +2,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { ButtonHTMLAttributes } from "react";
 
 const button = tv({
-  base: "rounded-xl font-medium uppercase transition-colors text-xs",
+  base: "rounded-xl font-medium uppercase transition-colors text-xs transition-all duration-300 ease-in-out",
   variants: {
     variant: {
       primary: [

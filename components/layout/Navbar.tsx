@@ -36,11 +36,21 @@ const navbar = tv({
       "flex h-10 w-10 items-center justify-center",
       "rounded-xl border border-white/20",
       "text-white lg:hidden",
+      "transition-all duration-300",
     ],
 
-    mobileMenu: "mt-3 lg:hidden",
+    mobileIcon: "transition-transform duration-300",
 
-    mobileContent: "rounded-3xl border border-white/10 bg-zinc-900 p-6",
+    mobileMenu: [
+      "overflow-hidden lg:hidden",
+      "transition-all duration-300 ease-in-out",
+    ],
+
+    mobileContent: [
+      "rounded-3xl border border-white/10",
+      "bg-zinc-900 p-6",
+      "backdrop-blur-xl",
+    ],
 
     mobileNavList: "flex flex-col gap-6",
 
@@ -48,8 +58,27 @@ const navbar = tv({
       "flex items-center justify-between",
       "text-xs font-medium uppercase text-white",
     ],
+
     requestDemoMobileButton:
       "mt-6 w-full rounded-2xl border border-white py-3 text-xs font-medium uppercase text-white",
+  },
+
+  variants: {
+    open: {
+      true: {
+        mobileMenu: "max-h-96 opacity-100 translate-y-0 mt-3",
+        mobileIcon: "rotate-180",
+      },
+
+      false: {
+        mobileMenu: "max-h-0 opacity-0 -translate-y-2",
+        mobileIcon: "rotate-0",
+      },
+    },
+  },
+
+  defaultVariants: {
+    open: false,
   },
 });
 
@@ -64,12 +93,13 @@ export default function Navbar() {
     navItem,
     button,
     mobileButton,
+    mobileIcon,
     mobileMenu,
     mobileContent,
     mobileNavList,
     mobileNavItem,
     requestDemoMobileButton,
-  } = navbar();
+  } = navbar({ open });
 
   return (
     <header className={wrapper()}>
@@ -100,40 +130,45 @@ export default function Navbar() {
 
         <button className={button()}>REQUEST DEMO</button>
 
-        <button onClick={() => setOpen(!open)} className={mobileButton()}>
-          {open ? <X size={20} /> : <Menu size={20} />}
+        <button
+          onClick={() => setOpen(!open)}
+          className={mobileButton()}
+        >
+          <div className={mobileIcon()}>
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </div>
         </button>
       </nav>
 
-      {open && (
-        <div className={mobileMenu()}>
-          <div className={mobileContent()}>
-            <ul className={mobileNavList()}>
-              <li>
-                <Link href="#" className={mobileNavItem()}>
-                  SOLUTIONS
-                  <ChevronDown size={16} />
-                </Link>
-              </li>
+      <div className={mobileMenu()}>
+        <div className={mobileContent()}>
+          <ul className={mobileNavList()}>
+            <li>
+              <Link href="#" className={mobileNavItem()}>
+                SOLUTIONS
+                <ChevronDown size={16} />
+              </Link>
+            </li>
 
-              <li>
-                <Link href="#" className={mobileNavItem()}>
-                  RESOURCES
-                  <ChevronDown size={16} />
-                </Link>
-              </li>
+            <li>
+              <Link href="#" className={mobileNavItem()}>
+                RESOURCES
+                <ChevronDown size={16} />
+              </Link>
+            </li>
 
-              <li>
-                <Link href="#" className={mobileNavItem()}>
-                  ABOUT US
-                </Link>
-              </li>
-            </ul>
+            <li>
+              <Link href="#" className={mobileNavItem()}>
+                ABOUT US
+              </Link>
+            </li>
+          </ul>
 
-            <button className={requestDemoMobileButton()}>REQUEST DEMO</button>
-          </div>
+          <button className={requestDemoMobileButton()}>
+            REQUEST DEMO
+          </button>
         </div>
-      )}
+      </div>
     </header>
   );
 }

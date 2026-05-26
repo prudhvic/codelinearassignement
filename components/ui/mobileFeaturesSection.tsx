@@ -62,7 +62,7 @@ const styles = tv({
 
     outerWrapper: [
       "container mx-auto w-full overflow-hidden",
-      "flex flex-col gap-24 bg-slate-50",
+      "flex flex-col gap-24 mt-6 bg-slate-50",
     ],
 
     phoneImage: "rounded-3xl h-auto",
