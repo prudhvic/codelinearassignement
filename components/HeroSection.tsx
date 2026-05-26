@@ -5,7 +5,7 @@ const hero = tv({
     slots: {
         section: `
       grid grid-cols-1 items-center justify-between
-       w-full px-4 lg:px-16
+       w-full 
     lg:grid-cols-2
     `,
 
@@ -37,7 +37,7 @@ const hero = tv({
       px-12 py-5
       text-sm font-medium uppercase
       text-white transition-colors
-      hover:bg-blue-700
+      hover:bg-white hover:text-blue-600
     `,
 
         secondaryButton: `
@@ -80,44 +80,55 @@ export default function HeroSection() {
     } = hero();
 
     return (
-        <section className={section()}>
+        <div className="container">
+            <section className={section()}>
 
-            {/* Left Content */}
-            <div className={leftContent()}>
-                <h2 className={heading()}>
-                    The new foundation
-                    of modern banking
-                </h2>
+                <div className={leftContent()}>
+                    <h2 className={heading()}>
+                        The new foundation
+                        of modern banking
+                    </h2>
 
-                <p className={description()}>
-                    We drive innovation and growth, provide seamless
-                    customer experience and operational excellence
-                </p>
+                    <p className={description()}>
+                        We drive innovation and growth, provide seamless
+                        customer experience and operational excellence
+                    </p>
 
-                <div className={buttonGroup()}>
-                    <button className={primaryButton()}>
-                        REQUEST DEMO
-                    </button>
+                    <div className={buttonGroup()}>
+                        <button className={primaryButton()}>
+                            REQUEST DEMO
+                        </button>
 
-                    <button className={secondaryButton()}>
-                        CONTACT US
-                    </button>
+                        <button className={secondaryButton()}>
+                            CONTACT US
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            {/* Right Image */}
-            <div className={imageWrapper()}>
-                <div className={glow()} />
+                <div className={imageWrapper()}>
+                    <div className={glow()} />
 
-                <Image
-                    src="/heroImage.jpg"
-                    alt="Hero Image"
-                    width={400}
-                    height={400}
-                    className={image()}
-                    priority
-                />
-            </div>
-        </section>
+                    <Image
+                        src="/heroImage.jpg"
+                        alt="Hero Image"
+                        width={400}
+                        height={400}
+                        className={image()}
+                        priority
+                    />
+                </div>
+            </section>
+            <section className="pt-2.5">
+                <h2>Trusted By</h2>
+                <ul className="flex gap-4 list-disc ">
+                    <li className="ml-1 text-sm text-slate-500">SHELLS</li>
+                    <li className="ml-1 text-sm text-slate-500">SmartFinder</li>
+                    <li className="ml-1 text-sm text-slate-500">Zoomerr</li>
+                    <li className="ml-1 text-sm text-slate-500">ArtVenue</li>
+                    <li className="ml-1 text-sm text-slate-500">Kontrastr</li>
+                    <li className="ml-1 text-sm text-slate-500">wavesmarathon</li>
+                </ul>
+            </section>
+        </div>
     );
 }
