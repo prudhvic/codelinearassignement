@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { tv } from "tailwind-variants";
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Button from "@/components/common/Button";
 import CustomLink from "../common/CustomLink";

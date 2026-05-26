@@ -93,8 +93,8 @@ export default function HeroSection() {
           </p>
 
           <div className={buttonGroup()}>
-            <Button size="lg">REQUEST DEMO</Button>
-            <Button variant="outline" size="lg">CONTACT US</Button>
+            <Button size="sm">REQUEST DEMO</Button>
+            <Button variant="outline" size="sm">CONTACT US</Button>
           </div>
         </div>
 
