@@ -19,6 +19,18 @@
   100% { transform: rotate(0deg); }
 }
 @layer utilities {
+  .font-chivo-mono {
+    font-family: var(--font-chivo-mono);
+  }
+
+  .font-archivo {
+    font-family: var(--font-archivo);
+  }
+
+  a {
+    font-family: var(--font-chivo-mono);
+  }
+
   .animate-ticker {
     animation: ticker 25s linear infinite;
   }

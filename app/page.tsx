@@ -1,15 +1,15 @@
-import BannerSection from "@/components/ui/bannerSection";
+import BannerSection from "@/components/ui/BannerSection";
 import HeroSection from "@/components/ui/HeroSection";
-import SolutionsSection from "@/components/ui/solutionsSection";
-import MobileFeaturesSection from "@/components/ui/mobileFeaturesSection";
-import CaseStudiesSection from "@/components/ui/caseStudiesSection";
-import FeatureSection from "@/components/ui/featureSection";
-import InsightsSection from "@/components/ui/insightsSection";
-import Footer from "@/components/ui/footer";
+import SolutionsSection from "@/components/ui/SolutionsSection";
+import MobileFeaturesSection from "@/components/ui/MobileFeaturesSection";
+import CaseStudiesSection from "@/components/ui/CaseStudiesSection";
+import FeatureSection from "@/components/ui/FeatureSection";
+import InsightsSection from "@/components/ui/InsightsSection";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden w-full">
       <HeroSection />
       <SolutionsSection />
       <BannerSection />

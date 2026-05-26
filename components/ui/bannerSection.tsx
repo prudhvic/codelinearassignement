@@ -1,8 +1,8 @@
 import { tv } from "tailwind-variants";
-import Button from "@/components/common/button";
+import Button from "@/components/common/Button";
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
-import CustomLink from "../common/customLink";
+import CustomLink from "../common/CustomLink";
 
 const features = [
   "Customer-On Boarding",

@@ -1,5 +1,5 @@
 import { tv } from "tailwind-variants";
-import Button from "@/components/common/button";
+import Button from "@/components/common/Button";
 
 const styles = tv({
   slots: {
@@ -7,7 +7,6 @@ const styles = tv({
       "relative w-full overflow-hidden",
       "grid grid-cols-1 lg:grid-cols-2",
       "items-center min-h-80",
-      "px-4 py-16 sm:px-8 md:px-14",
       "rounded-3xl border border-white/10",
       "bg-white/5",
       "p-8 lg:p-12",
@@ -30,8 +29,8 @@ const styles = tv({
     card: ["relative z-10", "flex flex-col gap-5"],
 
     heading: [
-      "text-3xl font-normal leading-tight text-white",
-      "lg:text-4xl xl:text-5xl",
+      "text-2xl font-normal leading-tight text-white",
+      "sm:text-3xl lg:text-4xl xl:text-5xl",
     ],
 
     description: "text-sm leading-6 text-zinc-400 max-w-lg",
@@ -43,7 +42,7 @@ const styles = tv({
       "lg:border-l lg:border-white/10 lg:pl-14",
     ],
 
-    outerWrapper: "px-14 w-full",
+    outerWrapper: "px-4 sm:px-8 md:px-14 w-full overflow-hidden",
   },
 });
 

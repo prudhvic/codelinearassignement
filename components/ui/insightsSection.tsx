@@ -1,49 +1,22 @@
 import { tv } from "tailwind-variants";
 import { ArrowRight, Plus } from "lucide-react";
-import Button from "@/components/common/button";
+import Button from "@/components/common/Button";
 import Link from "next/link";
-
-type Article = {
-  category: string;
-  title: string;
-  author: string;
-  date: string;
-};
-
-const articles: Article[] = [
-  {
-    category: "GETTING STARTED",
-    title: "How to transition from a traditional to a digital bank",
-    author: "David Grohl",
-    date: "17/08/24",
-  },
-  {
-    category: "GETTING STARTED",
-    title: "How to transition from a traditional to a digital bank",
-    author: "David Grohl",
-    date: "17/08/24",
-  },
-  {
-    category: "GETTING STARTED",
-    title: "How to transition from a traditional to a digital bank",
-    author: "David Grohl",
-    date: "17/08/24",
-  },
-];
+import { articles } from "@/data/insights";
 
 const styles = tv({
   slots: {
     section: [
       "w-full grid grid-cols-1 lg:grid-cols-2",
-      "items-start gap-12",
-      "px-4 py-16 sm:px-8 md:px-14",
+      "items-start gap-8 sm:gap-12",
+      "px-4 py-8 sm:py-16 sm:px-8 md:px-14",
     ],
 
     leftContent: "flex flex-col items-start gap-8",
 
     heading: [
-      "text-3xl font-normal leading-snug text-white",
-      "lg:text-4xl max-w-xs",
+      "text-2xl sm:text-3xl font-normal leading-snug text-white",
+      "lg:text-4xl max-w-sm",
     ],
 
 
@@ -56,10 +29,10 @@ const styles = tv({
 
     imagePlaceholder: [
       "flex items-center justify-center",
-      "bg-blue-950 min-h-64",
+      "bg-blue-950 min-h-48 sm:min-h-64",
     ],
 
-    iconGrid: "grid grid-cols-2 gap-6 p-10",
+    iconGrid: "grid grid-cols-2 gap-4 sm:gap-6 p-6 sm:p-10",
 
     featuredContent: [
       "flex flex-col justify-between gap-6",

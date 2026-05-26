@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Chivo_Mono, Archivo } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/layout/Navbar";
+import Navbar from "@/components/layout/Navbar";
 
 const chivoMono = Chivo_Mono({
   variable: "--font-chivo-mono",
@@ -11,8 +11,9 @@ const chivoMono = Chivo_Mono({
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-  weight: "400",
 });
+
+
 
 export const metadata: Metadata = {
   title: "N7 — Digital Banking Platform",
@@ -50,9 +51,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${chivoMono.variable} ${archivo.variable} h-full antialiased`}
+      className={`${chivoMono.variable} ${archivo.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col bg-[#060D1A]">
+      <body className="min-h-full flex flex-col bg-[#060D1A] overflow-x-hidden font-archivo">
         <Navbar />
         {children}
       </body>

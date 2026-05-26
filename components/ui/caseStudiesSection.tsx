@@ -5,42 +5,9 @@ import { tv } from "tailwind-variants";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Button from "@/components/common/button";
-import CustomLink from "../common/customLink";
-
-type CaseStudy = {
-  category: string;
-  title: string;
-  company: string;
-  companyIcon: string;
-};
-
-const caseStudies: CaseStudy[] = [
-  {
-    category: "GETTING STARTED",
-    title: "How we help brand reach out to more people",
-    company: "Zoomerr",
-    companyIcon: "/icons/zoomerr.svg",
-  },
-  {
-    category: "DIGITAL BANKING",
-    title: "Streamlining payments for a global fintech leader",
-    company: "Kontrastr",
-    companyIcon: "/icons/kontrastr.svg",
-  },
-  {
-    category: "OPEN BANKING",
-    title: "Building seamless API integrations for modern banks",
-    company: "Smart Finder",
-    companyIcon: "/icons/smart-finder.svg",
-  },
-  {
-    category: "LOAN MANAGEMENT",
-    title: "Transforming loan origination with digital solutions",
-    company: "Shells",
-    companyIcon: "/icons/shells.svg",
-  },
-];
+import Button from "@/components/common/Button";
+import CustomLink from "../common/CustomLink";
+import { caseStudies } from "@/data/caseStudies";
 
 const styles = tv({
   slots: {
@@ -55,16 +22,16 @@ const styles = tv({
     slide: [
       "shrink-0 basis-full",
       "grid grid-cols-1 lg:grid-cols-2",
-      "gap-8 items-center",
+      "gap-4 sm:gap-8 items-center",
     ],
 
     imageCard: [
       "flex items-center justify-center",
       "rounded-3xl bg-blue-950",
-      "min-h-80 overflow-hidden",
+      "min-h-60 sm:min-h-80 overflow-hidden",
     ],
 
-    iconGrid: "grid grid-cols-2 gap-6 p-10",
+    iconGrid: "grid grid-cols-2 gap-4 sm:gap-6 p-6 sm:p-10",
 
     content: "flex flex-col gap-6",
 
@@ -73,7 +40,7 @@ const styles = tv({
       "tracking-widest text-brand",
     ],
 
-    slideTitle: ["text-3xl font-normal leading-snug text-white", "lg:text-4xl"],
+    slideTitle: ["text-2xl sm:text-3xl font-normal leading-snug text-white", "lg:text-4xl"],
 
     companyRow: "flex items-center gap-3",
 
@@ -84,7 +51,7 @@ const styles = tv({
 
     companyName: "text-sm text-zinc-400",
 
-    navRow: ["relative flex items-center justify-center", "gap-6"],
+    navRow: ["relative flex items-center justify-center w-full", "gap-6"],
 
     arrowBtn: [
       "w-12 h-12 rounded-full",
@@ -210,8 +177,8 @@ export default function CaseStudiesSection() {
         <button className={arrowBtn()} onClick={next} aria-label="Next">
           <ArrowRight size={18} />
         </button>
-        <div>
-          <CustomLink text="VIEW ALL" className="text-right mr-auto" />
+        <div className={viewAllLink()}>
+          <CustomLink text="VIEW ALL" />
         </div>
       </div>
     </section>

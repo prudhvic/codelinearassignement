@@ -1,58 +1,9 @@
 import { tv } from "tailwind-variants";
 import Image from "next/image";
-import Button from "@/components/common/button";
+import Button from "@/components/common/Button";
 import { Asterisk, CheckCircle2 } from "lucide-react";
-import CustomLink from "@/components/common/customLink";
-
-type Feature = {
-  heading: string;
-  description: string;
-  bullets: string[];
-};
-
-const complianceFeature: Feature = {
-  heading: "Fully compliant with regulatory requirements",
-  description:
-    "The governance of risk management with regulatory is achieved by our risk management framework. N7 is fully integrated to work with digital banking solutions to streamline procedures.",
-  bullets: [
-    "Pre-Integrated Security System",
-    "Fully Compliant Anti-Regulatory Requirements",
-    "Digitally Connected Core",
-  ],
-};
-
-const legacyFeature: Feature = {
-  heading: "No legacy IT systems",
-  description:
-    "Our Digital Banking solution and multipotent approach help financial institutions take advantage of digital technologies while remaining aligned for trust and regulatory compliance.",
-  bullets: [
-    "Adaptive & Intelligent API Architecture",
-    "Architected User Experience",
-    "Cloud-native With lower TCO",
-  ],
-};
-
-const branchFeature: Feature = {
-  heading: "No traditional branches",
-  description:
-    "Our Digital Banking solution-to-box provides while adjusting and optimising some local data for a seamless checkout type Experience.",
-  bullets: [
-    "Anomalous & Paperless Banking",
-    "Digital transformation capability",
-    "Customers, Institutions and Transfer",
-  ],
-};
-
-type TickerItem =
-  | { type: "brand"; content: string }
-  | { type: "text"; before: string; emoji: string; after: string };
-
-const tickerItems: TickerItem[] = [
-  { type: "text", before: "Say ", emoji: "👋", after: " to the new way of banking" },
-  { type: "brand", content: "CB7" },
-  { type: "text", before: "Say ", emoji: "👋", after: " to the new way of banking" },
-  { type: "brand", content: "N7" },
-];
+import CustomLink from "@/components/common/CustomLink";
+import { complianceFeature, legacyFeature, branchFeature, tickerItems, type Feature } from "@/data/features";
 
 const tickerStyles = tv({
   slots: {
@@ -63,9 +14,9 @@ const tickerStyles = tv({
     ],
     tickerTrack: "flex items-center animate-ticker",
     tickerItem: "flex items-center shrink-0",
-    tickerStar: "mx-6 shrink-0 text-zinc-500",
-    tickerText: "text-3xl font-medium text-black whitespace-nowrap",
-    tickerBrand: "text-3xl font-medium text-brand whitespace-nowrap",
+    tickerStar: "mx-3 sm:mx-6 shrink-0 text-zinc-500",
+    tickerText: "text-lg sm:text-3xl font-medium text-black whitespace-nowrap",
+    tickerBrand: "text-lg sm:text-3xl font-medium text-brand whitespace-nowrap",
     tickerEmoji: "inline-block animate-bye",
   },
 });
@@ -73,27 +24,27 @@ const tickerStyles = tv({
 const styles = tv({
   slots: {
     section: [
-      "w-full container mx-auto flex flex-col gap-24",
-      "px-4 py-16 sm:px-8 md:px-14",
+      "w-full container mx-auto flex flex-col gap-12 sm:gap-24",
+      "px-4 py-8 sm:py-16 sm:px-8 md:px-14",
       "bg-slate-50",
     ],
 
-    row1: ["grid grid-cols-1 lg:grid-cols-3", "items-center gap-12"],
+    row1: ["grid grid-cols-1 lg:grid-cols-3", "items-center gap-6 lg:gap-12"],
 
-    row2: ["grid grid-cols-1 lg:grid-cols-2", "items-center gap-12"],
+    row2: ["grid grid-cols-1 lg:grid-cols-2", "items-center gap-6 lg:gap-12"],
 
     mainContent: "flex flex-col items-start gap-6",
 
     mainHeading: [
-      "text-4xl font-normal leading-tight text-slate-900",
-      "lg:text-5xl",
+      "text-2xl sm:text-3xl font-normal leading-tight text-slate-900",
+      "md:text-4xl lg:text-5xl",
     ],
 
     mainDesc: "text-sm leading-6 text-slate-600 max-w-xs",
 
     phoneCol: "flex items-center justify-center",
 
-    featureContent: "flex flex-col gap-4",
+    featureContent: "flex flex-col gap-4 mt-2.5",
 
     featureHeading: [
       "text-xl font-medium leading-snug text-slate-900",
@@ -109,7 +60,7 @@ const styles = tv({
     checkIcon: "mt-0.5 shrink-0 text-blue-500",
 
     outerWrapper: [
-      "w-full container mx-auto",
+      "container mx-auto w-full overflow-hidden",
       "flex flex-col gap-24 bg-slate-50",
     ],
 

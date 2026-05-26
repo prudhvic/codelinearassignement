@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { tv } from "tailwind-variants";
-import Button from "@/components/common/button";
+import Button from "@/components/common/Button";
 
 const styles = tv({
   slots: {
-    container: "my-4 mx-auto w-full p-14",
+    container: [
+      "my-4 mx-auto w-full",
+      "px-4 py-8 sm:px-8 md:px-14 md:py-14",
+    ],
 
     section: [
       "grid grid-cols-1 justify-between",
@@ -15,18 +18,18 @@ const styles = tv({
     leftContent: "flex max-w-3xl flex-col",
 
     heading: [
-      "text-5xl font-medium text-white",
-      "md:text-6xl",
+      "text-3xl font-medium text-white",
+      "sm:text-4xl md:text-5xl lg:text-6xl",
     ],
 
     description: [
-      "mt-8 max-w-md text-sm leading-5",
+      "mt-4 sm:mt-8 max-w-md text-sm leading-5",
       "text-zinc-400 font-medium",
     ],
 
-    buttonGroup: "mt-12 flex flex-col gap-5 sm:flex-row",
+    buttonGroup: "mt-8 sm:mt-12 flex flex-col gap-3 sm:flex-row sm:gap-5",
 
-    imageWrapper: "relative flex items-center justify-center",
+    imageWrapper: "relative flex items-center justify-center mt-10 lg:mt-0",
 
     glow: [
       "absolute h-full w-full",
@@ -37,20 +40,20 @@ const styles = tv({
     image: "relative rounded-hero object-cover",
 
     activityCard: [
-      "absolute left-0 top-1/2",
+      "hidden sm:block absolute left-0 top-1/2",
       "border-4 border-gray-400 rounded-2xl",
     ],
 
     balanceCard: [
-      "absolute right-0 bottom-1/3",
+      "hidden sm:block absolute right-0 bottom-1/3",
       "border-4 border-gray-400 rounded-2xl",
     ],
 
-    trustedSection: "pt-2.5 mt-8",
+    trustedSection: "pt-2.5 mt-6 sm:mt-8",
 
     trustedHeading: "text-sm font-medium mb-4 text-hero-light",
 
-    trustedList: "flex gap-4 list-none",
+    trustedList: "flex flex-wrap gap-3 list-none",
 
     trustedItem: [
       "flex items-center gap-1",
