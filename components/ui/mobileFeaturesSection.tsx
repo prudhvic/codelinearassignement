@@ -3,7 +3,8 @@ import Image from "next/image";
 import Button from "@/components/common/Button";
 import { Asterisk, CheckCircle2 } from "lucide-react";
 import CustomLink from "@/components/common/CustomLink";
-import { complianceFeature, legacyFeature, branchFeature, tickerItems, type Feature } from "@/data/features";
+import { complianceFeature, legacyFeature, branchFeature, tickerItems } from "@/data/features";
+import type { Feature } from "@/types";
 
 const tickerStyles = tv({
   slots: {

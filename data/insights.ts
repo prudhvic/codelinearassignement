@@ -1,9 +1,4 @@
-export type Article = {
-  category: string;
-  title: string;
-  author: string;
-  date: string;
-};
+import type { Article } from "@/types";
 
 export const articles: Article[] = [
   {

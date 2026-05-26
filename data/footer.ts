@@ -1,12 +1,4 @@
-export type Address = {
-  city: string;
-  text: string;
-};
-
-export type NavLinkGroup = {
-  heading: string;
-  items: string[];
-};
+import type { Address, NavLinkGroup } from "@/types";
 
 export const addresses: Address[] = [
   {

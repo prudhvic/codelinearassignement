@@ -1,9 +1,4 @@
-export type Solution = {
-  imageUrl: string;
-  title: string;
-  badge?: string;
-  description: string;
-};
+import type { Solution } from "@/types";
 
 export const solutions: Solution[] = [
   {

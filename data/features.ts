@@ -1,12 +1,4 @@
-export type Feature = {
-  heading: string;
-  description: string;
-  bullets: string[];
-};
-
-export type TickerItem =
-  | { type: "brand"; content: string }
-  | { type: "text"; before: string; emoji: string; after: string };
+import type { Feature, TickerItem } from "@/types";
 
 export const complianceFeature: Feature = {
   heading: "Fully compliant with regulatory requirements",

@@ -10,7 +10,7 @@ const styles = tv({
     topGrid: ["grid grid-cols-1 lg:grid-cols-2", "items-start gap-10 lg:gap-0"],
 
     n7Text: [
-      "text-8xl sm:text-9xl lg:text-n7 font-medium leading-none",
+      "text-8xl mx-auto md:mx-0 md:text-[20rem] font-medium leading-none",
       "inline-block pointer-events-none select-none",
     ],
 

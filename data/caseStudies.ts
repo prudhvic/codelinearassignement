@@ -1,9 +1,4 @@
-export type CaseStudy = {
-  category: string;
-  title: string;
-  company: string;
-  companyIcon: string;
-};
+import type { CaseStudy } from "@/types";
 
 export const caseStudies: CaseStudy[] = [
   {
