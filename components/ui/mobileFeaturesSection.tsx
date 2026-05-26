@@ -61,8 +61,8 @@ const styles = tv({
     checkIcon: "mt-0.5 shrink-0 text-blue-500",
 
     outerWrapper: [
-      "container mx-auto w-full overflow-hidden",
-      "flex flex-col gap-24 mt-6 bg-slate-50",
+      "w-full overflow-hidden",
+      "flex flex-col gap-24 mt-24 bg-slate-50",
     ],
 
     phoneImage: "rounded-3xl h-auto",
