@@ -1,26 +1,63 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes bye {
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(14deg); }
+  20%  { transform: rotate(-8deg); }
+  30%  { transform: rotate(14deg); }
+  40%  { transform: rotate(-4deg); }
+  50%  { transform: rotate(20deg); }
+  60%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+@layer utilities {
+  .animate-ticker {
+    animation: ticker 25s linear infinite;
+  }
+  .animate-bye {
+    animation: bye 2.5s ease-in-out infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+  }
+  .animate-ticker:hover {
+    animation-play-state: paused;
+  }
+  .text-brand {
+    color: #00b4fd;
+  }
+  .bg-brand {
+    background-color: #00b4fd;
+  }
+  .text-hero-light {
+    color: #e9f4f9;
+  }
+  .rounded-hero {
+    border-radius: 3rem;
+  }
+  .watermark-char {
+    font-size: 40rem;
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(30, 80, 220, 0.2);
+    pointer-events: none;
+    user-select: none;
+  }
+  .grid-cols-feature {
+    grid-template-columns: 3fr 2fr;
+  }
+  .grid-cols-footer {
+    grid-template-columns: 2fr 3fr;
+  }
+  .text-n7 {
+    font-size: 16rem;
+  }
 }
